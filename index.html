@@ -5,23 +5,31 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>10분할 모니터링 (2열 5행)</title>
     <style>
+        * {
+            /* 테두리와 패딩 때문에 크기가 어긋나는 것을 방지합니다 */
+            box-sizing: border-box;
+        }
         body {
             margin: 0;
             padding: 0;
             display: flex;
             flex-wrap: wrap;
             height: 100vh;
+            width: 100vw;
             overflow: hidden; 
             background-color: black;
+            /* 영상들을 양쪽 끝까지 꽉 채우도록 설정 */
+            align-content: flex-start;
         }
 
         iframe {
-            /* 2열 구성을 위해 너비 50% */
+            /* 가로 2개 배치를 위해 정확히 50% */
             width: 50vw;   
-            /* 5행 구성을 위해 높이 20% (100/5) */
+            /* 세로 5개 배치를 위해 정확히 20% */
             height: 20vh; 
             border: none;
-            flex-shrink: 0;
+            display: block;
+            float: left; /* 정렬 안정성을 위해 추가 */
         }
     </style>
 </head>
